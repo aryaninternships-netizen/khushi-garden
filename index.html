@@ -1818,7 +1818,7 @@ stemGeo.translate(0, 1.1, 0);
 const leafGeo = new THREE.ConeGeometry(0.16, 1.3, 4);
 leafGeo.translate(0, 0.65, 0); leafGeo.rotateZ(0.5); leafGeo.scale(1, 1, 0.3);
 
-const COUNT = 75000;
+const COUNT = 92000;
 // glossy waxy petals; specular pumps up when wet (rain)
 const headMat = new THREE.MeshPhongMaterial({ vertexColors: true,
   side: THREE.DoubleSide, shininess: 22, specular: new THREE.Color(0x404040) });
@@ -1893,14 +1893,14 @@ const SORTED_PAL = [...PALETTE].sort((a, b) => {
   return ka - kb;
 });
 outer:
-for (let band = 0; band < 26 && n < COUNT - WILD; band++) {
+for (let band = 0; band < 30 && n < COUNT - WILD; band++) {
   const color = SORTED_PAL[Math.min(SORTED_PAL.length - 1,
-    (band / 26 * SORTED_PAL.length) | 0)];
+    (band / 30 * SORTED_PAL.length) | 0)];
   // each variety band has its own height character (real cultivars differ)
   const bandH = 0.72 + ((band * 2654435761 >>> 16) % 100) / 100 * 0.55;
   for (let i = 0; i < 5600 && n < COUNT - WILD; i++) {
     // curved bands: rows follow a sine sweep across the field
-    const z = -SIZE / 2 + 14 + band * 14 + (Math.random() - 0.5) * 13;
+    const z = -SIZE / 2 + 2 + band * 13.8 + (Math.random() - 0.5) * 13;
     const x = -SIZE / 2 + 10 + (i / 5600) * (SIZE - 20) + (Math.random() - 0.5) * 2.5;
     let zc = z + 18 * Math.sin(x * 0.015); // curve the band
 
