@@ -1,8 +1,8 @@
-# Tulipa Garden
+# Khushi Garden
 
 An interactive 3D tulip garden in the browser. Three.js, no build step.
 
-**Live:** https://tulips-swart.vercel.app
+**Live:** https://khushi-garden.vercel.app
 
 ## What's in it
 
